@@ -1,0 +1,34 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.card{
+    background-image: url("./img/pokedex.png");
+    background-position: center;
+    background-color: antiquewhite;
+    height: 100vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+}
+
+#imagens{
+    background-color: aqua;
+    width: 400px;
+    height: 200px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+#descricao{
+    height: 300px;
+    width: 400px;
+    background-color: blue;
+    margin-top: 100px;
+}
