@@ -1,123 +1,139 @@
-body{
+:root {
+    --ink: #172033;
+    --screen-light: #dff9f4;
+}
+
+* { box-sizing: border-box; }
+
+body {
     margin: 0;
-    padding: 0;
+    color: var(--ink);
+    background: radial-gradient(circle at 20% 0%, #e8fbff 0, transparent 30rem), linear-gradient(135deg, #f7f9ff 0%, #edf2f7 100%);
+    min-height: 100vh;
 }
 
-.poppins-regular {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+.poppins-regular { font-family: "Poppins", sans-serif; font-weight: 400; font-style: normal; }
+
+#conteudo {
+    min-height: 690px;
+    display: grid;
+    place-items: center;
+    padding: 3.5rem 1.25rem 2.25rem;
 }
 
-.card{
-    background-image: url("./img/pokedex.png");
-    background-position: center;
-    background-color: antiquewhite;
-    height: 100vh;
-    width: 100vw;
-    background-repeat: no-repeat;
+.card {
+    position: relative;
+    width: min(92vw, 510px);
+    aspect-ratio: 742 / 962;
+    background: url("./img/pokedex.png") center / 100% 100% no-repeat;
+    filter: drop-shadow(0 24px 22px rgba(38, 54, 79, .25));
+}
+
+#descricao {
+    position: absolute;
+    z-index: 1;
+    top: 21%; left: 11%; width: 63%; min-height: 23%;
+    padding: .8rem 1rem;
+    overflow: auto;
+    color: var(--screen-light);
+    background: linear-gradient(135deg, #195765, #0b303b);
+    border: 5px solid #082832;
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 2px rgba(194, 255, 246, .2), 0 4px 0 rgba(0, 0, 0, .2);
+}
+
+.descricoes { margin: 0 0 .22rem; font-size: clamp(.68rem, 1.7vw, .88rem); line-height: 1.45; letter-spacing: .01em; word-break: break-word; }
+.descricoes:first-child { color: #fff; font-size: clamp(.85rem, 2.15vw, 1.08rem); font-weight: 700; text-transform: capitalize; }
+
+#imagens {
+    position: absolute;
+    z-index: 1;
+    left: 18%; bottom: 10%; width: 54%; height: 28%;
+    object-fit: contain;
+    background: radial-gradient(circle at center, #f5ffff, #a9e5e1);
+    border: 6px solid #0b3c48;
+    border-radius: 12px;
+    box-shadow: inset 0 0 0 3px rgba(255,255,255,.75), 0 5px 0 rgba(0, 0, 0, .16);
+}
+
+#secaoInput {
+    width: min(92vw, 620px);
+    margin: 0 auto 3.5rem;
+    padding: 1.5rem;
     display: flex;
-    justify-content: center;
     align-items: center;
-    flex-direction: column;
-    gap: 50px;
+    gap: .75rem;
+    background: rgba(255, 255, 255, .82);
+    border: 1px solid rgba(23, 32, 51, .08);
+    border-radius: 18px;
+    box-shadow: 0 14px 35px rgba(44, 62, 80, .10);
 }
 
-#imagens{
-    background-color: aqua;
-    width: 400px;
-    height: 300px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    border-radius: 5px;
+#secaoInput input {
+    flex: 1; min-width: 0; height: 48px; padding: 0 1rem;
+    color: var(--ink); font: inherit;
+    border: 2px solid #d7deea; border-radius: 10px; outline: none;
+    transition: border-color .2s, box-shadow .2s;
 }
 
-#descricao{
-    height: 200px;
-    width: 410px;
-    background-color: blue;
-    margin-top: 100px;
-    border-radius: 5px;
+#secaoInput input::placeholder { color: #7c8799; font-size: .82rem; }
+#secaoInput input:focus { border-color: #3c7cff; box-shadow: 0 0 0 4px rgba(60, 124, 255, .14); }
+
+#botao {
+    height: 48px; padding: 0 1.25rem; color: white;
+    font: 700 .9rem "Poppins", sans-serif; cursor: pointer;
+    background: linear-gradient(135deg, #ff465c, #dc1832);
+    border: 0; border-radius: 10px; box-shadow: 0 5px 0 #af1327;
+    transition: transform .15s, box-shadow .15s;
 }
 
-.descricoes{
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: column;
-    font-size: 20px;
-    line-height: 24px;
-    padding-left: 90px;
+#botao:hover { transform: translateY(-2px); box-shadow: 0 7px 0 #af1327; }
+#botao:active { transform: translateY(3px); box-shadow: 0 2px 0 #af1327; }
+
+#cardsCriados { max-width: 1280px; margin: 0 auto; padding: 0 1.25rem 4rem; }
+#cardsCriados h1 { margin: 0 0 1.5rem; font-size: clamp(1.45rem, 3vw, 2rem); color: #202b43; }
+
+#cardsPrevios { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+
+.card-pequeno {
+    position: relative;
+    width: min(100%, 290px);
+    justify-self: center;
+    aspect-ratio: 742 / 962;
+    background: url("./img/pokedex.png") center / 100% 100% no-repeat;
+    filter: drop-shadow(0 12px 12px rgba(38, 54, 79, .2));
+    transition: transform .2s ease;
 }
 
-#secaoInput{
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 20px;
+.card-pequeno:hover { transform: translateY(-6px) rotate(-1deg); }
+
+#descricao-pequeno {
+    position: absolute;
+    top: 21%; left: 11%; width: 63%; min-height: 24%;
+    padding: .5rem .65rem;
+    overflow: auto;
+    color: var(--screen-light);
+    background: linear-gradient(135deg, #195765, #0b303b);
+    border: 3px solid #082832; border-radius: 7px;
+    line-height: 1.2; font-size: .59rem;
 }
 
-#secaoInput input{
-    height: 25px;
-    width: 350px;
+#descricao-pequeno p { margin: 0 0 .28rem; word-break: break-word; }
+#descricao-pequeno p:first-child { color: white; font-weight: 700; text-transform: capitalize; }
+
+#div-imagens-pequenas {
+    position: absolute;
+    left: 18%; bottom: 10%; width: 54%; height: 28%;
+    display: grid; place-items: center;
+    background: radial-gradient(circle at center, #f5ffff, #a9e5e1);
+    border: 4px solid #0b3c48; border-radius: 8px;
+    box-shadow: inset 0 0 0 2px rgba(255,255,255,.75);
 }
 
-#secaoInput input::placeholder{
-    display: flex;
-    justify-content: center;
-}
+#imagem-pequena { width: 100%; height: 100%; object-fit: contain; }
 
-#botao{
-    padding: 10px 20px;
+@media (max-width: 560px) {
+    #conteudo { min-height: auto; padding-top: 2rem; }
+    #secaoInput { flex-direction: column; align-items: stretch; padding: 1rem; }
+    #botao { width: 100%; }
 }
-
-.card-pequeno{
-    background-image: url(./img/pokedex.png);
-    background-size: 400px 500px;
-    background-repeat: no-repeat;
-    height: 500px;
-    width: 400px;
-    margin: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;  
-    gap: 20px;
-    
-}
-
-#cardsPrevios{
-    height: 500vh;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: flex-start;
-}
-
-#descricao-pequeno{
-    width: 200px;
-    height: 170px;
-    background-color:chartreuse;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    margin-top: 60px;
-    flex-direction: column;
-    line-height: 11px;
-    font-size: 14px;
-    flex-wrap: wrap;
-}
-
-#div-imagens-pequenas{
-    height: 100px;
-    width: 200px;
-    background-color: aqua;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    border-radius: 5px;
-}
-
