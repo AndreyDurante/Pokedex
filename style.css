@@ -32,7 +32,7 @@ body {
 #descricao {
     position: absolute;
     z-index: 1;
-    top: 21%; left: 11%; width: 63%; min-height: 23%;
+    top: 27%; left: 18%; width: 63%; min-height: 23%;
     padding: .8rem 1rem;
     overflow: auto;
     color: var(--screen-light);
@@ -109,7 +109,7 @@ body {
 
 #descricao-pequeno {
     position: absolute;
-    top: 21%; left: 11%; width: 63%; min-height: 24%;
+    top: 27%; left: 18%; width: 63%; min-height: 24%;
     padding: .5rem .65rem;
     overflow: auto;
     color: var(--screen-light);
