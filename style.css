@@ -3,6 +3,12 @@ body{
     padding: 0;
 }
 
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .card{
     background-image: url("./img/pokedex.png");
     background-position: center;
@@ -20,17 +26,29 @@ body{
 #imagens{
     background-color: aqua;
     width: 400px;
-    height: 200px;
+    height: 300px;
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
+    border-radius: 5px;
 }
 
 #descricao{
-    height: 300px;
-    width: 400px;
+    height: 200px;
+    width: 410px;
     background-color: blue;
     margin-top: 100px;
+    border-radius: 5px;
+}
+
+.descricoes{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    font-size: 20px;
+    line-height: 24px;
+    padding-left: 90px;
 }
 
 #secaoInput{
@@ -50,9 +68,56 @@ body{
 #secaoInput input::placeholder{
     display: flex;
     justify-content: center;
-    padding-left: 17px;
 }
 
 #botao{
     padding: 10px 20px;
 }
+
+.card-pequeno{
+    background-image: url(./img/pokedex.png);
+    background-size: 400px 500px;
+    background-repeat: no-repeat;
+    height: 500px;
+    width: 400px;
+    margin: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;  
+    gap: 20px;
+    
+}
+
+#cardsPrevios{
+    height: 500vh;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+}
+
+#descricao-pequeno{
+    width: 200px;
+    height: 170px;
+    background-color:chartreuse;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 60px;
+    flex-direction: column;
+    line-height: 11px;
+    font-size: 14px;
+    flex-wrap: wrap;
+}
+
+#div-imagens-pequenas{
+    height: 100px;
+    width: 200px;
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    border-radius: 5px;
+}
+
