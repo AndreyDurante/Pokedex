@@ -2,19 +2,24 @@ const URL_API = "https://pokeapi.co/api/v2/pokedex/";
 
 
 const buscarPokemon = async (pokemon) => {
-    const URL = await fetch("https://pokeapi.co/api/v2/pokemon/ditto");
+    const URL = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
     const dados = await URL.json()
-    console.log((dados));
+
+    return dados;
 }
 
-const renderizar = () => {
+const renderizar = async () => {
     const descricao = document.getElementById("descricao");
     const imagens = document.getElementById("imagens");
     const inputPokedex = document.getElementById("inputPokemon")
-    const numeroPokedex = inputPokedex.value
+    
+    const pokemon = inputPokedex.value;
 
-    imagens.src = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/132.png"
-    descricao.textContent = "dlkajwbdajwhbd"
+    const dados = await buscarPokemon(pokemon)
+
+    imagens.src = dados.sprites.front_default;
+    descricao.textContent = dados.name
 }
 
-renderizar()
+const botao = document.getElementById("botao")
+botao.addEventListener('click', renderizar)
